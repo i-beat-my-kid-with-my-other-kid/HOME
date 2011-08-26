@@ -1,0 +1,6 @@
+#!/bin/sh
+
+f="$XDG_RUNTIME_DIR/browser.xid"
+[ -z `pidof tabbed` ] && rm $f
+[ ! -f $f ] && echo `tabbed -d 2>/dev/null` > $f
+vimprobable2 -e `cat $f` $@ 2>/dev/null

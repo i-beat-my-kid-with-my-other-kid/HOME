@@ -1,0 +1,158 @@
+unbind 1
+unbind 2
+unbind 3
+unbind 4
+unbind 5
+unbind 6
+unbind 7
+unbind 8
+unbind 9
+unbind 0
+
+unbind A
+unbind F
+unbind K
+unbind N
+unbind P
+unbind Q
+unbind R
+unbind S
+unbind U
+unbind V
+
+unbind a
+unbind b
+unbind c
+unbind f
+unbind i
+unbind k
+unbind l
+unbind m
+unbind n
+unbind p
+unbind r
+unbind s
+unbind u
+unbind v
+unbind w
+unbind x
+
+unbind Left
+unbind Right
+unbind Up
+unbind Down
+unbind Tab
+unbind space
+unbind minus
+unbind Return
+unbind exclam
+unbind apostrophe
+
+unbind C-Left
+unbind C-Right
+unbind C-Up
+unbind C-Down
+unbind C-Return
+unbind C-A
+unbind C-K
+unbind C-V
+unbind C-S
+unbind C-space
+unbind C-underscore
+unbind C-exclam
+unbind C-apostrophe
+unbind C-x
+unbind C-u
+unbind C-r
+unbind C-f
+unbind C-s
+unbind C-w
+unbind C-v
+unbind C-p
+unbind C-n
+unbind C-m
+unbind C-l
+unbind C-k
+unbind C-i
+unbind C-c
+unbind C-b
+unbind C-a
+unbind C-g
+
+unbind M-Tab
+
+
+escape C-numbersign
+
+warp off
+msgwait 3
+startup_message off
+
+set font         "terminus:pixelsize=12"
+set border       0
+set fwcolor      #ff9000
+set padding      0 0 0 0
+set barborder    1
+set barpadding   5 4
+set barinpadding 1
+set inputwidth   600
+set bgcolor      #2c2c2c
+set fgcolor      #00b0b0
+set bargravity   south
+
+
+addhook switchwin banish
+
+
+alias snap_dir exec ratpoison -c "exec mkdir -p ~/shots"
+alias snap_cmd exec ratpoison -c "exec import -window root ~/shots/`date +%FT%X%z`.png"
+alias snapshot exec ratpoison -c snap_dir -c snap_cmd
+
+alias pcm_toggle exec ratpoison -c "exec [ `amixer get PCM | tail -1 | awk '{print $4}'` == 255 ] && amixer -q set PCM 0 || amixer -q set PCM 100%"
+
+alias workspace1     exec ratpoison -c "gselect ."  -c "select -" -c "next"
+alias workspace2     exec ratpoison -c "gselect :"  -c "select -" -c "next"
+alias workspace3     exec ratpoison -c "gselect :." -c "select -" -c "next"
+alias last_workspace exec ratpoison -c "gother" -c "select -" -c "next"
+
+alias calc exec name=`ratpoison -c "prompt > "`; exec ratpoison -c "echo `echo $name|bc -l`"
+
+alias media_next   exec $HOME/bin/media next && ratpoison -c "echo `media`"
+alias media_prev   exec $HOME/bin/media prev && ratpoison -c "echo `media`"
+alias media_toggle exec $HOME/bin/media toggle && ratpoison -c "echo `media`"
+
+
+bind Escape abort
+
+definekey top M-j           next
+definekey top M-k           prev
+definekey top M-Pause       quit
+definekey top M-c           banish
+definekey top M-m           workspace1
+definekey top M-b           workspace2
+definekey top M-w           workspace3
+definekey top M-a           last_workspace
+bind          parenleft     exec ratpoison -c "gmove 0"
+bind          parenright    exec ratpoison -c "gmove 1"
+bind          braceright    exec ratpoison -c "gmove 2"
+
+definekey top Print         snapshot
+definekey top M-B           exec $BROWSER
+definekey top S-M-Return    exec urxvtc
+definekey top M-h           exec amixer -q set Master 2%-
+definekey top M-t           exec amixer -q set Master 2%+
+definekey top C-M-s         exec amixer -q set Master toggle
+definekey top M-s           pcm_toggle
+definekey top s-d           calc
+definekey top s-g           media_prev
+definekey top s-c           media_next
+definekey top s-l           media_toggle
+
+
+grename .
+gnew :
+gnew :.
+gselect .
+
+
+banish

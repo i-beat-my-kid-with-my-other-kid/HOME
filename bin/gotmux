@@ -1,0 +1,38 @@
+#!/bin/bash
+tmux start-server
+
+n=5
+
+if ! tmux has -t "main"; then
+	tmux new  -d -n "." -s "main"
+	tmux neww -d -n ":"
+	tmux neww -d -n ":."
+	tmux neww -d -n "::"
+	tmux neww -d -n "::."
+
+	tmux split -t main:0.0 -p 10
+	tmux split -t main:0.0 -h
+	tmux send -t main:0.1 "tail -f /var/log/messages.log" C-m
+	tmux send -t main:0.0 "vifm" C-m
+	tmux send -t main:0.2 "vifm" C-m
+
+	tmux split -t main:4.0
+
+	tmux selectw -t main:0
+	tmux selectp -t main:0.0
+fi
+
+for ((i=1; i<=$n; i++)); do
+	if ! tmux has -t $i; then
+		tmux new -d -n "."
+		tmux linkw -dk -t 0 -s main:0
+		tmux neww -d -n ":"
+		tmux selectw -t $i:1
+	fi
+done
+
+if ! tmux has -t "scratch"; then
+	tmux new  -d -n "pad" -s "scratch"
+fi
+
+tmux attach-session -t main

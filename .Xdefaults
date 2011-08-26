@@ -1,0 +1,52 @@
+*color0: #0f0f0f
+*color8: #191919
+
+*color1: #ed3434
+*color9: #ff6767
+
+*color2:  #afd700
+*color10: #afd75f
+
+*color3:  #ff9000
+*color11: #ffc123
+
+*color4:  #204a87
+*color12: #1165e9
+
+*color5:  #af0087
+*color13: #d70087
+
+*color6:  #008787
+*color14: #7dc9e3
+
+*color7:  #555753
+*color15: #a1a1a1
+
+*background: #0f0f0f
+*foreground: #555753
+
+
+urxvt.termName: rxvt-unicode
+urxvt.saveLine: 8192
+urxvt.scrollBar: false
+urxvt.transparent: false
+urxvt.font: -*-terminus-medium-r-normal-*-12-*-*-*-*-*-*-*
+urxvt.urlLauncher: vimprobable2-tabbed
+urxvt.loginShell: true
+urxvt.internalBorder: 0
+urxvt.externalBorder: 0
+urxvt.scrollStyle: plain
+urxvt.visualBell: false
+urxvt.cursorBlink: false
+urxvt.insecure: true
+urxvt.perl-lib: /usr/lib/urxvt/perl
+urxvt.perl-ext-common: default,matcher
+urxvt.keysym.M-u: perl:mark-yank-urls:activate_mark_mode
+urxvt.perl-ext: selection,mark-yank-urls
+urxvt.matcher.button: 1
+urxvt.cursorColor:  #dd8000
+urxvt.cursorColor2: #2c2c2c
+urxvt.pointerColor: #3f3f3f
+urxvt.pointerColor2: #1c1c1c
+urxvt.underlineColor: #0f0f0f
+urxvt.searchable-scrollback: CM-s

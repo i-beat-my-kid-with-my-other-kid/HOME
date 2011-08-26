@@ -1,0 +1,6 @@
+set editing-mode vi
+set show-all-if-ambiguous on
+set visible-stats on
+set bell-style none
+
+"\C-l": clear-screen
