@@ -1,6 +1,8 @@
 #!/bin/sh
+export http_proxy='localhost:8118'
+export https_proxy='localhost:8118'
 
 f="$XDG_RUNTIME_DIR/browser.xid"
-[ -z `pidof tabbed` ] && rm $f
+[ -z `pidof tabbed` ] && rm $f >/dev/null
 [ ! -f $f ] && echo `tabbed -d 2>/dev/null` > $f
 vimprobable2 -e `cat $f` $@ 2>/dev/null
