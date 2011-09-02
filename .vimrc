@@ -68,6 +68,7 @@ function MapToggle(key, opt)
 endfunction
 command -nargs=+ MapToggle call MapToggle(<f-args>)
 
+nnoremap    <C-v>      <C-t>
 nnoremap    <C-l>      :nohls<CR><C-l>
 noremap     <C-f>      <nop>
 noremap     <C-z>      <nop>
