@@ -3,7 +3,7 @@ if [ "$TERM" = "linux" ]; then
 	echo -en "\e]P8555753"
 	echo -en "\e]P1ed3434"
 	echo -en "\e]P9ff6767"
-	echo -en "\e]P2afd700"
+	echo -en "\e]P200cc55"
 	echo -en "\e]PAafd75f"
 	echo -en "\e]P3ff9000"
 	echo -en "\e]PBffc123"
