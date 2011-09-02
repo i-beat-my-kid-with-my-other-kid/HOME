@@ -24,6 +24,11 @@ if [ $DISPLAY == ":0" ]; then
 	exec urxvtc -e $HOME/bin/gotmux &
 fi
 
+if [ -n "`lsusb | grep "Cherry GmbH My3000 Keyboard"`" ]; then
+	exec xmodmap $XDG_CONFIG_HOME/xmodmap_cherry &
+else
+	exec xmodmap $XDG_CONFIG_HOME/xmodmap &
+fi
+
 exec unclutter -idle 3 -jitter 10 -root &
-exec xmodmap $XDG_CONFIG_HOME/xmodmap &
 exec ratpoison 2>/dev/null

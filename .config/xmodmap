@@ -2,13 +2,16 @@ remove Lock = Caps_Lock
 keysym Caps_Lock = Control_L
 add Control = Control_L
 
-remove mod1 = Alt_L
-keysym Alt_L = dollar asciitilde
-add mod1 = Alt_L
-keysym dollar = Alt_L
+keycode 94 = Shift_L
+keysym Menu = Escape
 
-keysym Menu = Super_R
-add mod4 = Super_R
+remove Control = Control_R
+keycode 109 = Insert
 
-remove mod4 = Super_R
-keysym Super_R = Escape
+remove Shift = Shift_R
+keysym Shift_R = Up
+
+keycode 98 = Shift_L
+
+keysym backslash = Return
+keysym Return = backslash bar

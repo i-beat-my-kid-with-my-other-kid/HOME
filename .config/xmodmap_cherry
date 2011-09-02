@@ -1,0 +1,14 @@
+remove Lock = Caps_Lock
+keysym Caps_Lock = Control_L
+add Control = Control_L
+
+remove mod1 = Alt_L
+keysym Alt_L = dollar asciitilde
+add mod1 = Alt_L
+keysym dollar = Alt_L
+
+keysym Menu = Super_R
+add mod4 = Super_R
+
+remove mod4 = Super_R
+keysym Super_R = Escape
