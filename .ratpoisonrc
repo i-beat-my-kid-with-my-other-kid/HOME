@@ -147,6 +147,7 @@ definekey top s-d           calc
 definekey top s-g           media_prev
 definekey top s-c           media_next
 definekey top s-l           media_toggle
+definekey top F26           exec vlock -a -n -s
 
 
 grename .

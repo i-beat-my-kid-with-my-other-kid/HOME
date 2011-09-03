@@ -12,3 +12,7 @@ add mod4 = Super_R
 
 remove mod4 = Super_R
 keysym Super_R = Escape
+
+keycode 146 = F26
+keycode 151 = F27
+keycode 171 = F28

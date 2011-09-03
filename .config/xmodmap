@@ -15,3 +15,7 @@ keycode 98 = Shift_L
 
 keysym backslash = Return
 keysym Return = backslash bar
+
+keycode 146 = F26
+keycode 151 = F27
+keycode 171 = F28
