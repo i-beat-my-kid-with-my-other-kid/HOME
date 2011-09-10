@@ -3,7 +3,6 @@ keysym Caps_Lock = Control_L
 add Control = Control_L
 
 keycode 94 = Shift_L
-keysym Menu = Escape
 
 remove Control = Control_R
 keycode 109 = Insert
@@ -19,3 +18,6 @@ keysym Return = backslash bar
 keycode 146 = F26
 keycode 151 = F27
 keycode 171 = F28
+
+keysym Tab = Escape
+keysym Escape = Tab ISO_Left_Tab
